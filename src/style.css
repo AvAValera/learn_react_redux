@@ -1,0 +1,41 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --bg-color: rgb(23, 22, 34);
+    --bg-input: rgb(62, 61, 78);
+    --text-color: rgb(255, 255, 255);
+    --todo-color: rgb(68, 68, 68);
+    --border-color: rgb(84, 83, 99);
+    --icon-check: rgb(123, 120, 139);
+    --active-color: rgb(0, 138, 252);
+}
+
+.dark{
+    transition: all 1s;
+    --bg-color: rgb(23, 22, 34);
+    --bg-input: rgb(62, 61, 78);
+    --text-color: rgb(255, 255, 255);
+    --todo-color: rgb(216, 216, 216);
+    --border-color: rgb(84, 83, 99);
+    --filter-color: rgb(119, 119, 119);
+    background-color: var(--bg-color);
+}
+.light{
+    transition: all 1s;
+    --bg-color: rgb(219, 219, 219);
+    --bg-input: rgb(255, 255, 255);
+    --text-color: rgb(0, 0, 0);
+    --todo-color: rgb(121, 121, 121);
+    --border-color: var(--bg-color);
+    --icon-check: var(--todo-color);
+    --filter-color: var(--todo-color);
+    background-color: var(--bg-color);
+}
