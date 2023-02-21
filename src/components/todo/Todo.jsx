@@ -32,10 +32,10 @@ export default function Todo() {
                 </div>
                 <div className="w-full">
                     <form className="mb-[50px]" onSubmit={add}>
-                        <input className="w-full h-[50px] p-[10px] bg-[var(--bg-input)] text-[16px] text-[var(--text-color)] rounded-[5px]" type="text" name="todo" placeholder="ADD TODO" />
+                        <input className="w-full h-[50px] p-[10px] bg-[var(--bg-input)] text-[16px] text-[var(--text-color)] rounded-[5px] shadow-[0_10px_10px_var(--shadow-input)]" type="text" name="todo" placeholder="ADD TODO" />
                     </form>
                     <div >
-                        <ul className="w-full rounded-[5px]">
+                        <ul className="w-full rounded-[5px] shadow-[0_10px_10px_var(--shadow-color)]">
                             <List />
                             <Filter />
                         </ul>

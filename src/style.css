@@ -9,11 +9,8 @@
 }
 
 :root{
-    --bg-color: rgb(23, 22, 34);
     --bg-input: rgb(62, 61, 78);
     --text-color: rgb(255, 255, 255);
-    --todo-color: rgb(68, 68, 68);
-    --border-color: rgb(84, 83, 99);
     --icon-check: rgb(123, 120, 139);
     --active-color: rgb(0, 138, 252);
 }
@@ -26,6 +23,8 @@
     --todo-color: rgb(216, 216, 216);
     --border-color: rgb(84, 83, 99);
     --filter-color: rgb(119, 119, 119);
+    --shadow-color: rgba(0, 0, 0, 0.51);
+    --shadow-input: rgba(0, 0, 0, 0.7);
     background-color: var(--bg-color);
 }
 .light{
@@ -37,5 +36,7 @@
     --border-color: var(--bg-color);
     --icon-check: var(--todo-color);
     --filter-color: var(--todo-color);
+    --shadow-color: rgb(143, 143, 143);
+    --shadow-input: rgba(56, 56, 56, 0.51);
     background-color: var(--bg-color);
 }
