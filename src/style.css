@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -9,34 +11,12 @@
 }
 
 :root{
-    --bg-input: rgb(62, 61, 78);
-    --text-color: rgb(255, 255, 255);
-    --icon-check: rgb(123, 120, 139);
-    --active-color: rgb(0, 138, 252);
+    --bg-color: #f5f5f5;
+    --card-shadow: rgba(0, 0, 0, 0.24);
 }
 
-.dark{
-    transition: all 1s;
-    --bg-color: rgb(23, 22, 34);
-    --bg-input: rgb(62, 61, 78);
-    --text-color: rgb(255, 255, 255);
-    --todo-color: rgb(216, 216, 216);
-    --border-color: rgb(84, 83, 99);
-    --filter-color: rgb(119, 119, 119);
-    --shadow-color: rgba(0, 0, 0, 0.51);
-    --shadow-input: rgba(0, 0, 0, 0.7);
+body{
     background-color: var(--bg-color);
+    font-family: 'Roboto', sans-serif;
 }
-.light{
-    transition: all 1s;
-    --bg-color: rgb(219, 219, 219);
-    --bg-input: rgb(255, 255, 255);
-    --text-color: rgb(0, 0, 0);
-    --todo-color: rgb(121, 121, 121);
-    --border-color: var(--bg-color);
-    --icon-check: var(--todo-color);
-    --filter-color: var(--todo-color);
-    --shadow-color: rgb(143, 143, 143);
-    --shadow-input: rgba(56, 56, 56, 0.51);
-    background-color: var(--bg-color);
-}
+
