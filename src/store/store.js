@@ -1,20 +1,12 @@
-import { configureStore } from "@reduxjs/toolkit";
-import todo from "./todo";
-import theme from "./theme";
-import filter from "./filter";
-
+import {configureStore} from "@reduxjs/toolkit";
+import shop from "./data-slice";
 
 
 const store = configureStore({
-    reducer: {
-        todo,
-        theme,
-        filter
-    },
-    devTools: true
+  reducer: {
+    shop
+  },
+  devTools: true,
 });
-
-
-
 
 export default store;

@@ -1,18 +1,16 @@
-import Header from "./components/Header";
-import Todo from "./components/todo/Todo";
-import { selectTheme } from "./store/theme";
-import { useSelector } from "react-redux";
-
+import React from "react";
+import Layout from "./components/layout/Layout";
+import Container from "./components/container/Container";
+import Filters from "./components/filter/Filters";
 function App() {
-    const theme = useSelector(selectTheme);
-
-
-    return (
-        <div className={`app ${theme} relative w-full h-screen min-w-[320px]`}>
-            <Header />
-            <Todo />
-        </div>
-    );
+  return (
+    <div className="app">
+    <Layout>
+      <Filters />
+      <Container />
+    </Layout>
+    </div>
+  );
 }
 
 export default App;
