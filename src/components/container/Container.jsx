@@ -1,11 +1,15 @@
 import React, {useEffect} from 'react';
 import Card from "../card/Card";
-import {getProducts, selectData} from "../../store/data-slice";
+import {getProducts, selectData, selectFilterData} from "../../store/data-slice";
+import { selectFilter } from '../../store/filter-slice';
 import {useDispatch, useSelector} from "react-redux";
+import Pagination from '@mui/material/Pagination';
 
-function Container(props) {
+function Container() {
   const dispatch = useDispatch();
-  const {entities, status, error} = useSelector(selectData);
+  const {search, category, price} = useSelector(selectFilter);
+  const {error, status} = useSelector(selectData);
+  const entities = useSelector(state => selectFilterData(state.shop.entities, {search, category, price}));
 
   useEffect(() => {
     dispatch(getProducts())
@@ -18,6 +22,7 @@ function Container(props) {
         {error && <h1>{error}</h1>}
         {entities.map((product) => <Card key={product.id} {...product} />)}
       </div>
+      {status === "received" && <Pagination count={Math.round(entities.length / 10)} variant="outlined" />}
     </div>
   );
 }

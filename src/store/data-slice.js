@@ -35,4 +35,19 @@ export const shop = createSlice({
     }
 })
 export const selectData = (state) => state.shop;
+export const selectFilterData = (state, {search = '', category = '', price = ''}) => {
+    const result = state.filter(product => product.title.toLowerCase().includes(search.toLowerCase()) && 
+        product.category.name.includes(category))
+    if(price === "Low"){
+        result.sort((a, b) => a.price > b.price ? 1 : -1)
+        return result;
+    }
+    if(price === "High"){
+        result.sort((a, b) => a.price < b.price ? 1 : -1)
+        return result;
+    }
+    
+    return result;
+}
+
 export default shop.reducer;
