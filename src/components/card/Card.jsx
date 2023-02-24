@@ -1,8 +1,27 @@
 import React from 'react';
 import { FaDollarSign } from "react-icons/fa";
+import Skeleton from '@mui/material/Skeleton';
 
-function Card({title, price, images, description, category }) {
+function Card({title, price, images, description, category, status }) {
 
+  if(status === "loading") {
+    return (
+      <div className="card w-[70%] h-[165px] bg-white shadow-[0px_0px_30px_var(--card-shadow)] rounded-l-[100px] rounded-r-[10px] mx-auto relative">
+        <Skeleton className="absolute top-[-25px] right-[10px]" width={100} height={50} />
+        <div className="card__container flex gap-[10px] items-center h-full p-[10px]">
+          <Skeleton className='flex-none' variant='circular' width={150} height={150} />
+          <div className="card__info flex flex-col w-full">
+            <Skeleton width={150} height={30}/>
+            <div >
+              <Skeleton width={100} height={40}/>
+            </div>
+            <Skeleton width={`100%`} />
+            <Skeleton width={`70%`} />
+          </div>
+        </div>
+      </div>
+    )
+  }
 
   return (
     <div className="card w-[70%] h-[165px] bg-white shadow-[0px_0px_30px_var(--card-shadow)] rounded-l-[100px] rounded-r-[10px] mx-auto relative">

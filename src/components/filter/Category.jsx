@@ -12,7 +12,7 @@ export default function Category() {
 		{value: "Electronics", label: "Electronics"},
 		{value: "Change title", label: "Change title"},
 		{value: "Shoes", label: "Shoes"},
-		{value: "Others", label: "Others"},
+		{value: "Other", label: "Other"},
 	]
 
 	return (
