@@ -1,16 +1,25 @@
-import React from "react";
-import Layout from "./components/layout/Layout";
-import Container from "./components/container/Container";
-import Filters from "./components/filter/Filters";
+import {useEffect} from "react";
+import {FilterPanel} from 'components/FilterPanel';
+import {JobList} from 'components/JobList';
+import {TheHeader} from 'components/TheHeader';
+import {addPositions} from "./store/positions/position-actions";
+import {useDispatch} from "react-redux";
+import data from "./mock/data.json";
 function App() {
-  return (
-    <div className="app">
-    <Layout>
-      <Filters />
-      <Container />
-    </Layout>
-    </div>
-  );
+    const dispatch = useDispatch();
+    useEffect(() => {
+        dispatch(addPositions(data));
+    })
+
+    return (
+        <>
+            <TheHeader/>
+            <div className='container'>
+                <FilterPanel/>
+                <JobList/>
+            </div>
+        </>
+    );
 }
 
 export default App;
