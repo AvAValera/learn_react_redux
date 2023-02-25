@@ -1,10 +1,14 @@
-import {combineReducers} from "redux";
-import positionReducer from "./positions/position-reducer";
-import filterReducer from "./filters/filter-reducer";
+import {combineReducers} from 'redux';
+import {themeReducer} from "./theme/theme-reducer";
+import {countriesReducer} from "./countries/countries-reducer";
+import {controlsReducer} from "./controls/controls-reducer";
+import {detailsReducer} from "./details/details-reducer";
 
 const rootReducer = combineReducers({
-    positions: positionReducer,
-    filters: filterReducer,
-})
+    theme: themeReducer,
+    countries: countriesReducer,
+    controls: controlsReducer,
+    details: detailsReducer,
+});
 
 export default rootReducer;

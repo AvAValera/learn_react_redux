@@ -1,23 +1,25 @@
-import {useEffect} from "react";
-import {FilterPanel} from 'components/FilterPanel';
-import {JobList} from 'components/JobList';
-import {TheHeader} from 'components/TheHeader';
-import {addPositions} from "./store/positions/position-actions";
-import {useDispatch} from "react-redux";
-import data from "./mock/data.json";
-function App() {
-    const dispatch = useDispatch();
-    useEffect(() => {
-        dispatch(addPositions(data));
-    })
+import {Routes, Route} from 'react-router-dom';
 
+import {Header} from './components/Header';
+import {Main} from './components/Main';
+
+import {HomePage} from './pages/HomePage';
+import {Details} from './pages/Details';
+import {NotFound} from './pages/NotFound';
+
+function App() {
     return (
         <>
-            <TheHeader/>
-            <div className='container'>
-                <FilterPanel/>
-                <JobList/>
-            </div>
+            <Header/>
+            <Main>
+                <Routes>
+                    <Route exact path="/" element={
+                        <HomePage/>
+                    }/>
+                    <Route path="/country/:name" element={<Details/>}/>
+                    <Route path="*" element={<NotFound/>}/>
+                </Routes>
+            </Main>
         </>
     );
 }
