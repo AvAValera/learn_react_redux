@@ -1,17 +1,26 @@
-import Header from "./components/Header";
-import Todo from "./components/todo/Todo";
-import { selectTheme } from "./store/theme";
-import { useSelector } from "react-redux";
+import {Routes, Route} from 'react-router-dom';
+
+import {Header} from './components/Header';
+import {Main} from './components/Main';
+
+import {HomePage} from './pages/HomePage';
+import {Details} from './pages/Details';
+import {NotFound} from './pages/NotFound';
 
 function App() {
-    const theme = useSelector(selectTheme);
-
-
     return (
-        <div className={`app ${theme} relative w-full h-screen min-w-[320px]`}>
-            <Header />
-            <Todo />
-        </div>
+        <>
+            <Header/>
+            <Main>
+                <Routes>
+                    <Route exact path="/" element={
+                        <HomePage/>
+                    }/>
+                    <Route path="/country/:name" element={<Details/>}/>
+                    <Route path="*" element={<NotFound/>}/>
+                </Routes>
+            </Main>
+        </>
     );
 }
 
